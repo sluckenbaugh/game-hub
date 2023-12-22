@@ -3,6 +3,7 @@ import {
   Grid,
   GridItem,
   ListItem,
+  Text,
   Text as Heading,
   UnorderedList,
 } from "@chakra-ui/react";
@@ -16,6 +17,7 @@ interface Props {
 
 const GameAttributes = ({ game }: Props) => {
   const url = game.website;
+  const year = game.released.substring(0, 4);
 
   return (
     <>
@@ -70,6 +72,12 @@ const GameAttributes = ({ game }: Props) => {
             </Link>
           </>
         )}
+      </Box>
+      <Box>
+        <Heading fontSize={25} opacity="40%">
+          Year
+        </Heading>
+        <Text paddingX={1}>{year}</Text>
       </Box>
     </>
   );
