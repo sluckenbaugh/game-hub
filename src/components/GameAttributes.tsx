@@ -60,12 +60,16 @@ const GameAttributes = ({ game }: Props) => {
         </GridItem>
       </Grid>
       <Box marginY={5}>
-        <Heading fontSize={25} opacity="40%">
-          Website
-        </Heading>
-        <Link href={url} target="_blank">
-          {url}
-        </Link>
+        {url && (
+          <>
+            <Heading fontSize={25} opacity="40%">
+              Website
+            </Heading>
+            <Link href={url} target="_blank">
+              {url}
+            </Link>
+          </>
+        )}
       </Box>
     </>
   );
