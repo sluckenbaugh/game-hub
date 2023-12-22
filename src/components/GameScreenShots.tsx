@@ -1,4 +1,4 @@
-import { GridItem, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, Image, SimpleGrid } from "@chakra-ui/react";
 import { Game } from "../entities/Game";
 import useScreenShots from "../hooks/useScreenShots";
 
@@ -13,7 +13,11 @@ const GameScreenShots = ({ game }: Props) => {
     <SimpleGrid columns={{ sm: 1, md: 2, lg: 2, xl: 3 }} gap={3}>
       {screenShots?.map((s) => (
         <GridItem key={s.id}>
-          <img src={s.image} alt={`screenshot of ${game.name}`}></img>
+          <Image
+            borderRadius="6px"
+            src={s.image}
+            alt={`screenshot of ${game.name}`}
+          ></Image>
         </GridItem>
       ))}
     </SimpleGrid>
